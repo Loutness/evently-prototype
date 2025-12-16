@@ -26,25 +26,6 @@ L'objectif principal est de présenter une approche structurée de la conception
 *   **Navigation** : React Router
 *   **Gestion d'état** : Context API (pour l'Auth et les Événements)
 
-## Installation et Lancement
-
-1.  **Cloner le projet**
-    ```bash
-    git clone https://github.com/Loutness/evently-prototype.git
-    cd evently-prototype
-    ```
-
-2.  **Installer les dépendances**
-    ```bash
-    npm install
-    ```
-
-3.  **Lancer le serveur de développement**
-    ```bash
-    npm run dev
-    ```
-    L'application sera accessible sur `http://localhost:8080`.
-
 ## Auteur
 
 Protoype réalisé par Marie-Candice Bergame dans le cadre d'une démonstration de compétences en Product Management.
