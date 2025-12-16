@@ -1,0 +1,177 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Evently - Modern, playful event discovery app
+   * Color scheme: Vibrant but elegant, with blues, teals, and accent colors
+   */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 14% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 9%;
+
+    /* Primary: Vibrant blue gradient - modern and energetic */
+    --primary: 220 91% 54%;
+    --primary-foreground: 0 0% 100%;
+    --primary-50: 220 100% 97%;
+    --primary-100: 220 100% 94%;
+    --primary-200: 220 100% 88%;
+    --primary-300: 220 100% 79%;
+    --primary-400: 220 98% 61%;
+    --primary-500: 220 91% 54%;
+    --primary-600: 220 95% 48%;
+    --primary-700: 220 95% 42%;
+
+    --secondary: 180 81% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 280 85% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 91% 54%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 14% 9%;
+    --sidebar-primary: 220 91% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 81% 52%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 91% 54%;
+  }
+
+  .dark {
+    --background: 220 14% 9%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 13% 13%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 13% 13%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 220 91% 60%;
+    --primary-foreground: 220 14% 9%;
+    --primary-50: 220 100% 97%;
+    --primary-100: 220 100% 94%;
+    --primary-200: 220 100% 88%;
+    --primary-300: 220 100% 79%;
+    --primary-400: 220 98% 66%;
+    --primary-500: 220 91% 60%;
+    --primary-600: 220 95% 54%;
+    --primary-700: 220 95% 48%;
+
+    --secondary: 180 81% 57%;
+    --secondary-foreground: 220 14% 9%;
+
+    --muted: 220 13% 23%;
+    --muted-foreground: 220 9% 64%;
+
+    --accent: 280 85% 64%;
+    --accent-foreground: 220 14% 9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 23%;
+    --input: 220 13% 23%;
+    --ring: 220 91% 60%;
+
+    --sidebar-background: 220 14% 9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 220 91% 60%;
+    --sidebar-primary-foreground: 220 14% 9%;
+    --sidebar-accent: 180 81% 57%;
+    --sidebar-accent-foreground: 220 14% 9%;
+    --sidebar-border: 220 13% 23%;
+    --sidebar-ring: 220 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Mobile app specific styles */
+  html {
+    background: hsl(var(--background));
+  }
+
+  /* Prevent zoom on double-tap for touch devices */
+  input,
+  button,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* Utilities for the app */
+@layer components {
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .safe-bottom {
+    padding-bottom: max(6rem, calc(5rem + env(safe-area-inset-bottom)));
+  }
+
+  .safe-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
+  .safe-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .safe-area-all {
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(6rem, calc(5rem + env(safe-area-inset-bottom)));
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary to-primary-600;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-br from-secondary to-secondary via-primary-400;
+  }
+}
